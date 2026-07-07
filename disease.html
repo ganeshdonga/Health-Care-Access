@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Diseases, Symptoms & Remedies</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #ffe6e6, #e6f7ff);
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 15px;
+    }
+    #searchInput {
+      display: block;
+      margin: 0 auto 20px;
+      padding: 12px;
+      width: 80%;
+      max-width: 500px;
+      border-radius: 25px;
+      border: 2px solid #888;
+      font-size: 16px;
+    }
+    .filters {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .filters button {
+      margin: 5px;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 20px;
+      background-color: #ff7f50;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+    .filters button:hover,
+    .filters button.active {
+      background-color: #e06030;
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 15px;
+    }
+    .card-content h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      color: #333;
+    }
+    .card-content ul {
+      padding-left: 20px;
+      margin: 0 0 10px;
+    }
+    .card-content ul li {
+      margin-bottom: 4px;
+      font-size: 14px;
+      color: #555;
+    }
+    .medicine {
+      font-weight: bold;
+      color: #1a73e8;
+      margin-top: 8px;
+      font-size: 14px;
+    }
+    @media(max-width: 800px) {
+      .grid-container { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media(max-width: 500px) {
+      .grid-container { grid-template-columns: 1fr; }
+    }
+    .card.bg1 {
+  background: linear-gradient(to bottom right, #ffe0b2, #ffcc80);
+}
+.card.bg2 {
+  background: linear-gradient(to bottom right, #b3e5fc, #81d4fa);
+}
+.card.bg3 {
+  background: linear-gradient(to bottom right, #c8e6c9, #a5d6a7);
+}
+.card.bg4 {
+  background: linear-gradient(to bottom right, #f8bbd0, #f48fb1);
+}
+.card.bg5 {
+  background: linear-gradient(to bottom right, #e1bee7, #ce93d8);
+}
+.card.bg6 {
+  background: linear-gradient(to bottom right, #fff9c4, #fff59d);
+}
+.card.bg7 {
+  background: linear-gradient(to bottom right, #ffcccb, #f4a7a7);
+}
+.card.bg {
+  background: linear-gradient(to bottom right, #e0f7fa, #b2ebf2);
+}
+.card.bg9 {
+  background: linear-gradient(to bottom right, #fdf5e6, #f5deb3);
+}
+.card.bg10 {
+  background: linear-gradient(to bottom right, #e0f2f1, #b2dfdb);
+}
+  </style>
+</head>
+<body>
+
+  <h1>Diseases, Symptoms & Remedies</h1>
+  <input type="text" id="searchInput" placeholder="Search Disease...">
+
+  <div class="filters">
+    <button class="filter-btn active" data-category="all">All</button>
+    <button class="filter-btn" data-category="infection">Infections</button>
+    <button class="filter-btn" data-category="respiratory">Respiratory</button>
+    <button class="filter-btn" data-category="joint">Joint Pain</button>
+    <button class="filter-btn" data-category="digestive">Digestive</button>
+    <button class="filter-btn" data-category="mental">Mental Health</button>
+  </div>
+
+  <div class="grid-container" id="cardContainer">
+
+    <!-- 1. Cold & Cough -->
+    <!-- Add these 20 cards into your <div id="cardContainer"> section -->
+        <div class="card bg" data-category="respiratory">
+    <img src="assets/cold.jpeg" alt="Cold & Cough">
+    <div class="card-content">
+        <h3>Cold & Cough</h3>
+        <ul>
+        <li>Coughing</li>
+        <li>Runny nose</li>
+        <li>Sore throat</li>
+        <li>Mild fever</li>
+        <li>Fatigue</li>
+        </ul>
+        <h3>Remidies</h3>
+        <ul class="medicine">
+        <li>Paracetamol</li>
+        <li>Rest</li>
+        <li>Hydration</li>
+        </ul>
+    </div>
+    </div><div class="card bg" data-category="digestive">
+    <img src="assets/diarhea.jpeg" alt="Diarrhea">
+    <div class="card-content">
+        <h3>Diarrhea</h3>
+        <ul>
+        <li>Loose stools</li>
+        <li>Frequent bowel movements</li>
+        <li>Abdominal cramps</li>
+        <li>Nausea</li>
+        <li>Dehydration</li>
+        </ul>
+        <h3>Remidies</h3>
+        <ul class="medicine">
+        <li>ORS</li>
+        <li>Hydration</li>
+        <li>Loperamide</li>
+        </ul>
+    </div>
+    </div><div class="card bg" data-category="infection">
+    <img src="assets/maleria.jpeg" alt="Malaria">
+    <div class="card-content">
+        <h3>Malaria</h3>
+        <ul>
+        <li>High fever</li>
+        <li>Chills</li>
+        <li>Headache</li>
+        <li>Muscle pain</li>
+        <li>Sweating</li>
+        </ul>
+        <h3>Remidies</h3>
+        <ul class="medicine">
+        <li>Antimalarials</li>
+        <li>Artemisinin-based drugs</li>
+        </ul>
+    </div>
+    </div><div class="card bg" data-category="infection">
+    <img src="assets/typohid.jpeg" alt="Typhoid">
+    <div class="card-content">
+        <h3>Typhoid</h3>
+        <ul>
+        <li>Prolonged fever</li>
+        <li>Weakness</li>
+        <li>Stomach pain</li>
+        <li>Loss of appetite</li>
+        <li>Constipation or diarrhea</li>
+        </ul>
+        <h3>Remidies</h3>
+        <ul class="medicine">
+        <li>Antibiotics</li>
+        <li>Ciprofloxacin</li>
+        </ul>
+    </div>
+    </div><div class="card bg" data-category="mental">
+    <img src="assets/anxiety.jpeg" alt="Anxiety">
+    <div class="card-content">
+        <h3>Anxiety</h3>
+        <ul>
+        <li>Nervousness</li>
+        <li>Rapid heartbeat</li>
+        <li>Restlessness</li>
+        <li>Sleep issues</li>
+        <li>Trouble concentrating</li>
+        </ul>
+        <h3>Remidies</h3>
+        <ul class="medicine">
+        <li>Therapy</li>
+        <li>Relaxation techniques</li>
+        </ul>
+    </div>
+    </div><div class="card bg" data-category="digestive">
+    <img src="assets/Constipation.png" alt="Constipation">
+    <div class="card-content">
+        <h3>Constipation</h3>
+        <ul>
+        <li>Hard stools</li>
+        <li>Infrequent bowel movements</li>
+        <li>Abdominal pain</li>
+        <li>Straining during stools</li>
+        <li>Bloating</li>
+        </ul>
+        <h3>Remidies</h3>
+        <ul class="medicine">
+        <li>Fiber</li>
+        <li>Laxatives</li>
+        <li>Drink water</li>
+        </ul>
+    </div>
+    </div><div class="card bg" data-category="digestive">
+    <img src="assets/varma-gastritis.jpg" alt="Gastritis">
+    <div class="card-content">
+        <h3>Gastritis</h3>
+        <ul>
+        <li>Stomach pain</li>
+        <li>Nausea</li>
+        <li>Bloating</li>
+        <li>Loss of appetite</li>
+        <li>Indigestion</li>
+        </ul>
+        <h3>Remidies</h3>
+        <ul class="medicine">
+        <li>Antacids</li>
+        <li>PPI (Omeprazole)</li>
+        </ul>
+    </div>
+    </div><div class="card bg" data-category="joint">
+    <img src="assets/arthrist.jpeg" alt="Arthritis">
+    <div class="card-content">
+        <h3>Arthritis</h3>
+        <ul>
+        <li>Joint pain</li>
+        <li>Swelling</li>
+        <li>Stiffness</li>
+        <li>Reduced motion</li>
+        <li>Redness</li>
+        </ul>
+        <h3>Remidies</h3>
+        <ul class="medicine">
+        <li>NSAIDs</li>
+        <li>Physiotherapy</li>
+        </ul>
+    </div>
+    </div><div class="card bg" data-category="respiratory">
+    <img src="assets/bronchits.png" alt="Bronchitis">
+    <div class="card-content">
+        <h3>Bronchitis</h3>
+        <ul>
+        <li>Persistent cough</li>
+        <li>Mucus production</li>
+        <li>Chest tightness</li>
+        <li>Wheezing</li>
+        <li>Low fever</li>
+        </ul>
+        <h3>Remidies</h3>
+        <ul class="medicine">
+        <li>Cough syrup</li>
+        <li>Antibiotics (if bacterial)</li>
+        </ul>
+    </div>
+    </div><div class="card bg" data-category="infection">
+    <img src="assets/flu.jpeg" alt="Flu">
+    <div class="card-content">
+        <h3>Flu</h3>
+        <ul>
+        <li>Fever</li>
+        <li>Chills</li>
+        <li>Sore throat</li>
+        <li>Body aches</li>
+        <li>Fatigue</li>
+        </ul>
+        <h3>Remidies</h3>
+        <ul class="medicine">
+        <li>Rest</li>
+        <li>Fluids</li>
+        <li>Antiviral drugs</li>
+        </ul>
+    </div>
+    </div>
+    
+
+    <!-- (Add remaining 9 cards similarly...) -->
+
+  </div>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const filters = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.card');
+
+    searchInput.addEventListener('input', () => {
+      const term = searchInput.value.toLowerCase();
+      cards.forEach(c => {
+        const title = c.querySelector('h3').textContent.toLowerCase();
+        c.style.display = title.includes(term) ? 'block' : 'none';
+      });
+    });
+
+    filters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filters.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const cat = btn.dataset.category;
+        cards.forEach(c => {
+          c.style.display = (cat === 'all' || c.dataset.category === cat) ? 'block' : 'none';
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
